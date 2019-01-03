@@ -1,0 +1,119 @@
+@import "base.less";
+// 主体部分
+#main {
+    position: relative;
+    height: 100%;
+     // 轮播图部分;
+    section:not(:nth-child(1)) {
+        padding: 0 .2rem;
+    }
+    .mui-scroll-wrapper{
+        padding: .9rem 0;
+    }
+    #slide {
+        .mui-slider-indicator {
+            .mui-indicator {
+                width: .15rem;
+                height: .15rem;
+            }
+        }
+    } // 导航部分
+    #nav {
+        padding-top: .2rem;
+        a {
+            display: block;
+            img {
+                width: 100%;
+            }
+        }
+    } // 广告部分
+    #banner {
+        padding-top: .2rem;
+        .left {
+            a {
+                display: block;
+                img {
+                    width: 50%;
+                    height: 2.048rem;
+                }
+            }
+        }
+        .right {
+            a {
+                display: block;
+                img {
+                    width: 100%;
+                    height: 4.096rem;
+                }
+            }
+        }
+    } // 品牌部分
+    #brand {
+        padding-top: .2rem;
+       .title{
+           a{
+               display: block;
+               img{
+                   width: 100%;
+               }
+           }
+       }
+       .content{
+           display: flex;
+           flex-wrap: wrap;
+           a{
+               display: block;
+               width: 25%;
+               img{
+                   width: 100%;
+               }
+           }
+       }
+    }
+    // 运动部分
+    #sport,#wemen,#man {
+        padding-top: .2rem;
+        .title{
+            a{
+                display: block;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        .content{
+            div{
+                background-color: #fff;
+                margin-bottom:.2rem;
+                padding-top:.2rem;
+                a{
+                    display: block;
+                    width: 3.3554rem;
+                    margin: 0;
+                    text-align: center;
+                    box-shadow: 0px 0px 1px #ccc;
+                    margin: 0.066rem;
+                    img{
+                        display: block;
+                        width: 100%;
+                    }
+                    p{
+                        text-align: center;
+                        font-size: .28rem;
+                        line-height: .28rem;
+                        margin-bottom:.2rem;
+                    }
+                    .btn{
+                        width: 1.6784rem;
+                        height: .6862rem;
+                        background-color: #007aff;
+                        color:#fff;
+                        margin-bottom: .2rem;
+                    }
+                }
+            }
+            
+        }
+    }
+  
+}
