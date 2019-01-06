@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet/less" href="./less/productlist.less">
+    <script src="./lib/less/less.js"></script>
+    <script src="./js/rem.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <a href="catepage.html" class="left fa fa-arrow-left"></a>
+        <h4 class="center">商品列表</h4>
+        <a href="searh.html" class="right"></a>
+    </header>
+    <main id=main>
+        <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--数据列表-->
+
+
+                <div class="searchTop">
+                    <form action="">
+                        <input type="search" placeholder="请输入搜索内容" class="searchText">
+                        <button type="button" class="mui-btn mui-btn-primary searchBtn">搜索</button>
+                    </form>
+                </div>
+                <div class="productList">
+                    <div class="mui-card">
+                        <!--页眉，放置标题-->
+                        <div class="mui-card-header">
+                            <a href="#">上架时间<span class="fa fa-angle-down"></span></a>
+                            <a href="#" class="active" data-product-con="price" data-sort="2">价格<span class="fa fa-angle-down"></span></a>
+                            <a href="#" data-product-con="num" data-sort="2">销量<span class="fa fa-angle-down"></span></a>
+                            <a href="#">折扣<span class="fa fa-angle-down"></span></a>
+                        </div>
+                        <!--内容区-->
+                        <div class="mui-card-content">
+                            <div class="mui-row">
+                                <div class="mui-col-xs-6">
+                                    <a href="#">
+                                        <img src="/mobile/images/product.jpg" alt="">
+                                        <p>匡威三星标1970s converse复刻 142334c 144757c三星标黑色高帮</p>
+                                        <p><span>￥499.1</span><del>￥888.1</del></p>
+                                        <button class="mui-btn mui-btn-primary ">立即购买</button>
+                                    </a>
+                                </div>
+                                <div class="mui-col-xs-6">
+                                    <a href="#">
+                                        <img src="/mobile/images/product.jpg" alt="">
+                                        <p>匡威三星标1970s converse复刻 142334c 144757c三星标黑色高帮</p>
+                                        <p><span>￥499.1</span><del>￥888.1</del></p>
+                                        <button class="mui-btn mui-btn-primary ">立即购买</button>
+                                    </a>
+                                </div>
+                                <div class="mui-col-xs-6">
+                                    <a href="#">
+                                        <img src="/mobile/images/product.jpg" alt="">
+                                        <p>匡威三星标1970s converse复刻 142334c 144757c三星标黑色高帮</p>
+                                        <p><span>￥499.1</span><del>￥888.1</del></p>
+                                        <button class="mui-btn mui-btn-primary ">立即购买</button>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </main>
+    <footer id="footer">
+        <div class="mui-row">
+            <!-- .mui-col-xs-3*4>a[href="#"]>i.fa.fa-home+span{首页} -->
+            <div class="mui-col-xs-3"><a href="index.html" class="active"><i class="fa fa-home"></i><span>首页</span></a></div>
+            <div class="mui-col-xs-3"><a href="catepage.html"><i class="fa fa-bars"></i><span>分类</span></a></div>
+            <div class="mui-col-xs-3"><a href="cart.html"><i class="fa fa-shopping-cart"></i><span>购物车</span></a></div>
+            <div class="mui-col-xs-3"><a href="user.html"><i class="fa fa-user"></i><span>个人中心</span></a></div>
+        </div>
+    </footer>
+</body>
+<script type="text/html" id="productListTpl">
+    {{each data value}}
+    <div class="mui-col-xs-6">
+        <a href="#">
+            <img src="{{value.pic[0].picAddr}}" alt="">
+            <p>{{ value.proName }}</p>
+            <p><span>￥{{value.price}}</span><del>￥{{value.oldPrice}}</del></p>
+            <button class="mui-btn mui-btn-primary btn-buy" data-product-id="{{ value.id }}" >立即购买{{value.num}}</button>
+        </a>
+    </div>
+    {{/each}}
+</script>
+
+</html>
+<script src="./lib/mui/js/mui.js"></script>
+<script src="./lib/zepto/zepto.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./js/productlist.js"></script>

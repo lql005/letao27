@@ -29,6 +29,7 @@ body{
         color: #fff;
         line-height: .9rem;
         margin: 0;
+        font-size: .28rem;
         input{
             height:.68rem ;
             line-height: .9rem;
@@ -48,8 +49,33 @@ body{
     }
 }
 
+#main{
+    padding: .9rem 0;
+    .searchTop{
+        padding: .2rem;
+        form{
+            display: flex;
+            input{
+                flex:1;
+                height: .68rem;
+                margin-bottom:0;
+                background-color: #fff;
+                font-size: .28rem;
+                border-radius:.12rem 0 0 .12rem;
+                border:.02rem solid #006699;
+                text-align: left;
+            }
+            button{
+                background-color: #006699;
+                border-radius: 0 .12rem .12rem 0;
+                border:.02rem solid #006699;
+            }
+        }
+    }
+}
+
 #footer {
-    display: flex;
+    height: .9rem;
     background-color: #006699;
     position: fixed;
     left: 0;
@@ -58,12 +84,13 @@ body{
     z-index: 999;
     a {
         display: flex;
-        flex-direction: column;
+        height: .9rem;
+        color: #fff;
+         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: .9rem;
-        text-align: center;
-        flex: 1;
+        
+        
         color: #fff;
         font-size: .28rem;
        i{

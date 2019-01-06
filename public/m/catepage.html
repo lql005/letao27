@@ -15,22 +15,22 @@
 
 <body>
     <header id="header">
-        <a href="#" class="left fa fa-arrow-left" ></a>
+        <a href="index.html" class="left fa fa-arrow-left"></a>
         <form action="" class="center">
             <input type="search" placeholder="请输入内容">
         </form>
-        <a href="searh.html" class="right fa fa-search"></a>
+        <a href="search.html" class="right fa fa-search"></a>
     </header>
     <main id="main">
         <div class="main-left">
             <div class="mui-scroll-wrapper">
                 <div class="mui-scroll">
                     <ul>
-                        <li class="active"><a href="#">运动馆</a></li>
+                        <!-- <li class="active"><a href="#">运动馆</a></li>
                         <li><a href="#">女士馆</a></li>
                         <li><a href="#">帆布馆</a></li>
                         <li><a href="#">户外馆</a></li>
-                        <li><a href="#">男士馆</a></li>
+                        <li><a href="#">男士馆</a></li> -->
                     </ul>
                 </div>
             </div>
@@ -64,14 +64,30 @@
         </div>
     </main>
     <footer id="footer">
-        <a href="index.html"><i class="fa fa-home"></i> <span>首页</span></a>
-        <a href="#"><i class="fa fa-bars"></i> <span>分类</span></a>
-        <a href="#"><i class="fa fa-shopping-cart"></i> <span>购物车</span></a>
-        <a href="#"><i class="fa fa-user"></i> <span>关于我们</span></a>
+        <div class="mui-row">
+            <!-- .mui-col-xs-3*4>a[href="#"]>i.fa.fa-home+span{首页} -->
+            <div class="mui-col-xs-3"><a href="index.html" class="active"><i class="fa fa-home"></i><span>首页</span></a></div>
+            <div class="mui-col-xs-3"><a href="catepage.html"><i class="fa fa-bars"></i><span>分类</span></a></div>
+            <div class="mui-col-xs-3"><a href="cart.html"><i class="fa fa-shopping-cart"></i><span>购物车</span></a></div>
+            <div class="mui-col-xs-3"><a href="user.html"><i class="fa fa-user"></i><span>个人中心</span></a></div>
+        </div>
     </footer>
 </body>
 
 </html>
+<script type="text/html" id="catepageLeftTpl">
+    {{each rows}}
+        <li class="{{$value.id ==1?'active':''}}"><a href="#" data-id="{{$value.id}}">{{$value.categoryName}}</a></li>
+    {{/each}}
+</script>
+<script type="text/html" id="catepageRightTpl">
+    {{each rows}}
+    <a href="#" class="mui-col-xs-4">
+        <img src="{{$value.brandLogo}}" alt="">
+        <p>{{$value.brandName}}</p>
+    </a>
+    {{/each}}
+</script>
 <script src="./lib/mui/js/mui.js"></script>
 <script src="./lib/zepto/zepto.min.js"></script>
 <script src="./lib/artTemplate/template-web.js"></script>

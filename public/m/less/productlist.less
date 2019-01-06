@@ -1,0 +1,61 @@
+@import "base.less";
+
+
+
+#main{
+    .mui-scroll{
+        padding: .9rem 0;
+    }
+    .mui-pull-top-pocket{
+        top:.9rem;
+    }
+    // .mui-scroll-wrapper{
+    //     top:.9rem;
+    // }
+    // .mui-pull-bottom-pocket{
+    //     bottom:.9rem;
+    // }
+    .mui-card{
+        .mui-card-header{
+            background-color: #eee;
+            a{
+                display: block;
+                color: #666;
+                font-size: .28rem;
+                &.active{
+                    color:red;
+                }
+            }
+        }
+        .mui-card-content{
+            
+            >div{
+                >div{
+                    padding: .2rem 0.05rem 0;  
+                    a{
+                        
+                        display: block;
+                        border: 0.02rem solid #ccc;
+                        text-align: center;
+                        padding-bottom: 0.2rem;
+                        img{
+                            width: 100%;
+                        }
+                        p{   
+                        height: .8rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        }
+                        button{
+                            
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}

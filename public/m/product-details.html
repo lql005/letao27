@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet/less" href="./less/product-details.less">
+    <script src="./lib/less/less.js"></script>
+    <script src="./js/rem.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <a href="catepage.html" class="left fa fa-arrow-left"></a>
+        <h4 class="center">商品详情</h4>
+        <a href="searh.html" class="right"></a>
+    </header>
+    <main id="main">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <section class="slide">
+                    <div id="slider" class="mui-slider">
+                        <div class="mui-slider-group mui-slider-loop">
+                            <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                            <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/mobile/images/product.jpg"></a></div>
+                            <!-- 第一张 -->
+                            <div class="mui-slider-item"> <a href="#"><img src="/mobile/images/detail.jpg"></a></div>
+                            <!-- 第二张 -->
+                            <div class="mui-slider-item"><a href="#"><img src="/mobile/images/product.jpg"></a></div>
+
+                            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                            <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="/mobile/images/detail.jpg"></a>
+                            </div>
+                        </div>
+                        <div class="mui-slider-indicator">
+                            <div class="mui-indicator mui-active"></div>
+                            <div class="mui-indicator"></div>
+                        </div>
+                    </div>
+                </section>
+                <!-- 列表 -->
+                <section class="detailsList">
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                            <div>
+                                名称：
+                                <span>
+                                    【莹恋】MIZUNO美津浓V1GA159002乒乓球鞋男鞋女鞋室内综合训练鞋
+                                </span>
+                            </div>
+
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <div>
+                                价格：
+                                ¥<span>112</span>¥<del>334</del>
+                            </div>
+
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <div>
+                                尺码：
+                                <button type="button" class="mui-btn">36</button>
+                                <button type="button" class="mui-btn">36</button>
+                                <button type="button" class="mui-btn">36</button>
+                                <button type="button" class="mui-btn">36</button>
+                                <button type="button" class="mui-btn">36</button>
+                                <button type="button" class="mui-btn">36</button>
+                            </div>
+
+                        </li>
+                        <li class="mui-table-view-cell">
+                            数量：
+                            <div class="mui-numbox" data-numbox-step='10' data-numbox-min='0' data-numbox-max='100'>
+                                <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                                <input class="mui-numbox-input" type="number" />
+                                <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <!-- 轮播 -->
+
+    </main>
+    <footer id="footer">
+
+        <div class="mui-row">
+            <!-- .mui-col-xs-3*4>a[href="#"]>i.fa.fa-home+span{首页} -->
+            <div class="mui-col-xs-2"><a href="index.html" class="active"><i class="fa fa-shopping-cart"></i></a></div>
+            <div class="mui-col-xs-5"><a href="#"><button type="button" class="mui-btn mui-btn-danger add-cart">加入购物车</button></a></div>
+            <div class="mui-col-xs-5"><a href="cart.html"><button type="button" class="mui-btn mui-btn-warning ">立即购买</button></a></div>
+        </div>
+
+    </footer>
+</body>
+
+</html>
+<script type="text/html" id="product-details">
+    <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <section class="slide">
+                    <div id="slider" class="mui-slider">
+                        <div class="mui-slider-group mui-slider-loop">
+                            <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                            <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{pic[pic.length-1].picAddr}}"></a></div>
+                            <!-- 第一张 -->
+                            {{each pic value}}
+                            <div class="mui-slider-item"> <a href="#"><img src="{{value.picAddr}}"></a></div>
+                            
+                            {{/each}}
+                            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                            <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{pic[0].picAddr}}"></a>
+                            </div>
+                        </div>
+                        <div class="mui-slider-indicator">
+                            {{each pic value index}}
+                            <div class="mui-indicator {{index==0?mui-active:""}}"></div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </section>
+                <!-- 列表 -->
+                <section class="detailsList">
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                            <div>
+                                名称：
+                                <span>
+                                    {{proName}}
+                                </span>
+                            </div>
+
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <div>
+                                价格：
+                                ¥<span>{{price}}</span>¥<del>{{oldPrice}}</del>
+                            </div>
+
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <div>
+                                尺码：
+                                {{each size value}}
+                                <button type="button" class="mui-btn product-size" data-btn-size="{{value}}">{{value}}</button>
+                                {{/each}}
+                            </div>
+
+                        </li>
+                        <li class="mui-table-view-cell">
+                            数量：
+                            <div class="mui-numbox" data-numbox-step='1' data-numbox-min='0' data-numbox-max='{{num}}'>
+                                <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                                <input class="mui-numbox-input product-num" type="number" value="0">
+                                <button class="mui-btn mui-numbox-btn-plus " type="button">+</button>
+                                
+                            </div>
+                            <span class="">剩余{{num}}件</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+</script>
+<script src="./lib/mui/js/mui.js"></script>
+<script src="./lib/zepto/zepto.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./js/product-details.js"></script>
